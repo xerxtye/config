@@ -14,9 +14,9 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-" nnoremap <A-y> "+y
-" vnoremap <A-y> "+y
+" Synchronize NERDTree with current 
+" opened tab file path
+autocmd BufEnter * lcd %:p:h
 
 " ALT+Y wl-copy
 xnoremap <Esc>y y:call system('wl-copy', @@)<CR>
@@ -95,5 +95,6 @@ nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" SignColumn coc bar to normal
+" Set SignColumn coc bar to normal
 hi! link SignColumn Normal
+
