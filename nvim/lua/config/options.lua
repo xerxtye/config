@@ -9,7 +9,7 @@ vim.g.snacks_animate = false
 vim.opt.guicursor = "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "rust", "html", "css", "java", "cmake", "typescript" },
+  pattern = { "c", "cpp", "rust", "html", "css", "java", "cmake", "typescript", "go" },
   callback = function()
     vim.bo.shiftwidth = 4
     vim.bo.tabstop = 4
